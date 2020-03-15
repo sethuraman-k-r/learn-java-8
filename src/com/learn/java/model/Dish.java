@@ -29,5 +29,10 @@ public class Dish {
         return type;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public enum Type {MEAT, FISH, OTHER};
 }
