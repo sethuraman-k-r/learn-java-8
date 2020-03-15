@@ -10,6 +10,10 @@ interface ApplePredicate {
     boolean compare(Apple apple);
 }
 
+/**
+ * This is an example of behaviour parameterization
+ */
+
 public class FindApple {
 
     public static void main(String[] args) {
