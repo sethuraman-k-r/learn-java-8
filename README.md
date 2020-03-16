@@ -9,3 +9,5 @@ Files as follows:
 - ConstructorReferences
 - StreamBasics
 - StreamOperations
+- StreamPractice
+- BuildStreams
