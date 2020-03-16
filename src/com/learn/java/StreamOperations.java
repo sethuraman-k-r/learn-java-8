@@ -92,6 +92,30 @@ public class StreamOperations {
         menu.stream().filter(Dish::isVegetarian).findAny().ifPresent(d -> {
             System.out.println(d.getName());
         });
+
+        // Reduction - reduce()
+        List<Integer> numbers1 = Arrays.asList(1,2,3,4,5,6);
+        int sum1 = numbers1.stream().reduce(0, (a,b) -> a + b);
+        System.out.println(sum1);
+
+        int product = numbers1.stream().reduce(1, (a,b) -> a * b);
+        System.out.println(product);
+
+        // reduce without initial value
+        Optional<Integer> sum2 = numbers1.stream().reduce((a,b) -> (a + b));
+        System.out.println(sum2);
+
+        // reduce - min
+        Optional<Integer> max = numbers1.stream().reduce(Integer::max);
+        System.out.println(max);
+
+        // reduce - max
+        Optional<Integer> min = numbers1.stream().reduce(Integer::min);
+        System.out.println(min);
+
+        // reduce - count
+        long count = numbers1.stream().count();
+        System.out.println(count);
     }
 
 }
