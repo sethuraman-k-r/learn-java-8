@@ -11,3 +11,4 @@ Files as follows:
 - StreamOperations
 - StreamPractice
 - BuildStreams
+- CollectDataUsingStream
