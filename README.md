@@ -12,6 +12,7 @@ Files as follows:
 - StreamPractice
 - BuildStreams
 - CollectDataUsingStream
-- CollectorInterface
+- ~~CollectorInterface~~
 - ParallelDataProcessing
+- ~~NonBlockingUsingCompletableFuture~~
 - NewDateAndTime
