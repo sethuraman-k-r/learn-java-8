@@ -14,3 +14,4 @@ Files as follows:
 - CollectDataUsingStream
 - CollectorInterface
 - ParallelDataProcessing
+- NewDateAndTime
