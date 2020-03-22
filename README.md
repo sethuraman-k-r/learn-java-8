@@ -12,3 +12,5 @@ Files as follows:
 - StreamPractice
 - BuildStreams
 - CollectDataUsingStream
+- CollectorInterface
+- ParallelDataProcessing

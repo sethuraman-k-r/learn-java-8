@@ -1,6 +1,7 @@
 package com.learn.java;
 
 import com.learn.java.model.Dish;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -92,6 +93,21 @@ public class CollectDataUsingStream {
 //            else return CaloricLevel.FAT;
 //        },Collectors.toCollection(HashSet::new))));
         System.out.println(caloricLevelsByType);
+
+        Map<Boolean, List<Dish>> partitionedMenu = menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian));
+        System.out.println(partitionedMenu);
+        List<Dish> vegetarianDishes = partitionedMenu.get(true);
+//        List<Dish> vegetarianDishes = menu.stream().filter(Dish::isVegetarian).collect(Collectors.toList());
+        System.out.println(vegetarianDishes);
+
+        Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType = menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian, Collectors.groupingBy(Dish::getType)));
+        System.out.println(vegetarianDishesByType);
+
+        Map<Boolean, Dish> mostCaloricPartitionedByVegetarian = menu.stream().collect(Collectors.partitioningBy(Dish::isVegetarian, Collectors.collectingAndThen(
+                Collectors.maxBy(Comparator.comparingInt(Dish::getCalories)),
+                Optional::get
+        )));
+        System.out.println(mostCaloricPartitionedByVegetarian);
     }
 
 }
